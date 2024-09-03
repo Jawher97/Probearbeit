@@ -1,0 +1,54 @@
+<form [formGroup]="customerForm" (ngSubmit)="updateCustomer()">
+  <div class="container">
+    @if(displayAllInputs){
+    <div class="left-side">
+      <img src="{{ customer?.picture }}" class="image" />
+      <mat-form-field class="mt-2">
+        <mat-label>Picture</mat-label>
+        <input matInput maxlength="256" formControlName="picture" />
+      </mat-form-field>
+    </div>
+    }
+
+    <div class="right-side mx-3">
+      <div class="inputs-container">
+        <mat-form-field>
+          <mat-label>First Name</mat-label>
+          <input
+            matInput
+            maxlength="256"
+            formControlName="firstname"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Last Name</mat-label>
+          <input matInput maxlength="256" formControlName="lastname" />
+        </mat-form-field>
+        @if(displayAllInputs){
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput maxlength="256" formControlName="email" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="birthday" />
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        }
+      </div>
+      <button
+        mat-raised-button
+        color="primary"
+        class="my-3"
+        [disabled]="!customerForm.valid"
+        type="submit"
+      >
+        Save
+      </button>
+    </div>
+  </div>
+</form>

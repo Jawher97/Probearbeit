@@ -1,0 +1,21 @@
+<div class="example-container">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1>Probearbeit</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #snav mode="over" fixedInViewport="true" fixedTopGap="64" style="min-width: 150px;">
+      <mat-nav-list>
+        <a mat-list-item routerLink="start" routerLinkActive="active">Start</a>
+      </mat-nav-list>
+      <mat-nav-list>
+        <a mat-list-item routerLink="customer" routerLinkActive="active">Customer</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

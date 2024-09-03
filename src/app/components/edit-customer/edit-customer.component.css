@@ -1,0 +1,25 @@
+
+.container {
+  display: flex;
+}
+
+/* used flex : 1 for both classes to divide the container into two divs with 50% width each  */
+/* used flex and flex-direction : columns to display the inputs of each div under each other */
+.left-side,
+.right-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* center the image in the middle with 50% width */
+.image {
+  margin: 0 auto;
+  width: 50%
+}
+
+/* used flex and flex-direction : columns to display the inputs under each other */
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+}
